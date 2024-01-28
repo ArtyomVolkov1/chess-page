@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <link rel="stylesheet" href="./css/main.css" />
     <title>Сhess club</title>
   </head>
@@ -29,12 +32,12 @@
             васюкинского турнира по шахматам
           </p>
           <div class="header__group-btn">
-            <button class="header__btn btn-first default">
+            <a href="#chess" class="header__btn btn-first default">
               <span>Поддержать&nbsp;</span>шахматную мысль
-            </button>
-            <button class="header__btn btn-second">
+            </a>
+            <a href="#tournament" class="header__btn btn-second">
               <span>Подробнее&nbsp;</span>о турнире
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -50,7 +53,7 @@
       <div class="container">
         <section class="chess-contest">
           <div class="chess-contest__content">
-            <h2>
+            <h2 id="chess">
               Чтобы поддержать Международный васюкинский турнир посетите лекцию
               на тему:
               <span class="accent-text">«Плодотворная дебютная идея»z</span>
@@ -298,7 +301,13 @@
                 viewBox="0 0 36 36"
                 fill="none"
               >
-                <circle class="btn-circle btn-right-circule" cx="18" cy="18" r="18" fill="#313131" />
+                <circle
+                  class="btn-circle btn-right-circule"
+                  cx="18"
+                  cy="18"
+                  r="18"
+                  fill="#313131"
+                />
                 <path
                   d="M15.9232 11.0769L22.8463 18L15.9232 24.9231"
                   stroke="white"
@@ -311,7 +320,7 @@
         </section>
         <section class="participant">
           <div class="participant__title">
-            <h3>Участники турнира</h3>
+            <h3 id="tournament">Участники турнира</h3>
             <div class="participant__carousel-btn">
               <button class="participant__prev-btn">
                 <svg

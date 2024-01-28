@@ -11,7 +11,7 @@
 }
 
 a, a:visited {
-    color: inherit;
+    /* color: inherit; */
     text-decoration: none;
 
 }
