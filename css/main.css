@@ -1,0 +1,784 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Montserrat:wght@500;600&display=swap");
+
+:root {
+  --title-color: #313131;
+  --text-color: #313131;
+  --accent-yellow: #fbce51;
+
+  --font-title: "Merriweather", serif;
+  --font-text: "Golos Text", sans-serif;
+  --font-header-big: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--font-text);
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.none {
+  display: none !important;
+}
+
+.container {
+  max-width: 1252px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* Общие классы */
+
+.accent-text {
+  color: #f54932;
+}
+
+.default {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.line-through {
+  text-decoration: line-through;
+  text-decoration-color: #f54932;
+}
+
+/* Header */
+
+.header {
+  padding-top: 26px;
+  background-color: #e9ded4;
+  background-image: url("../img/header/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+}
+
+.logo {
+  margin-bottom: 62px;
+}
+
+/* Header Content */
+
+.header__content {
+  width: 542px;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  font-family: var(--font-title);
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: var(--title-color);
+}
+
+.header__title--text-center {
+  text-align: center;
+}
+
+.header__title--text-right {
+  text-align: right;
+}
+
+.header__text-cta {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* btn */
+
+.header__group-btn {
+  display: flex;
+  gap: 16px;
+}
+
+.header__btn {
+  width: 100%;
+  height: 72px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 66px;
+  border: 2px solid #1f1f1f;
+  transition: all 0.3s ease-out;
+}
+
+.btn-first:hover {
+  background: #fbce51;
+  color: #1f1f1f;
+}
+
+.btn-second:hover {
+  background: #fbce51;
+  color: #1f1f1f;
+}
+
+.header__group-btn:has(.btn-first:hover) .btn-second {
+  background: #1f1f1f;
+  color: #fff;
+}
+.header__group-btn:has(.btn-second:hover) .btn-first {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.marquee {
+  height: 60px;
+  display: block;
+  overflow: hidden;
+  background-color: #f54932;
+}
+.marquee p {
+  padding: 18px 0;
+  text-align: center;
+  text-wrap: nowrap;
+  color: #fff;
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee:hover > p {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(100%, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+/* Main */
+
+/* Section chess-contest */
+.chess-contest {
+  display: flex;
+  margin-bottom: 64px;
+}
+
+.chess-contest__content {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.chess-contest__content--mob {
+  display: none;
+}
+
+.chess-contest__content h2 {
+  width: 765px;
+  max-width: 100%;
+  color: var(--title-color);
+  font-family: var(--font-title);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+/* Section Chess-games */
+
+.chess-games {
+  margin-bottom: 165px;
+}
+
+.chess-games__content {
+  display: flex;
+  gap: 44px;
+}
+
+.chess-games__img {
+  position: relative;
+}
+
+.chess-games-img {
+  width: 100%;
+  height: 100%;
+}
+
+.chess-games__table {
+  display: flex;
+  flex-direction: column;
+}
+
+.chess-games__table h2 {
+  width: 704px;
+  margin-bottom: 60px;
+  font-family: var(--font-title);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+/* Table */
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 48px;
+}
+
+.table-row {
+  display: flex;
+  padding: 16px 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.table-row:nth-child(even) {
+  padding-left: 16px;
+}
+
+.table-row:not(:nth-child(even)) {
+  border-right: 2px solid #d0d0d0;
+}
+.table-row:not(:nth-last-child(-n + 2)) {
+  border-bottom: 2px solid #d0d0d0;
+}
+
+.tb-title {
+  opacity: 0.7;
+  font-weight: 400;
+}
+.tb-des {
+  font-weight: 600;
+}
+
+a.chess-games__link {
+  color: #3057a2;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* History steps */
+
+.history-steps {
+  margin-bottom: 200px;
+}
+
+.history-steps__title {
+  position: relative;
+  width: 806px;
+  margin-bottom: 54px;
+}
+
+.history-steps__title h3 {
+  font-family: var(--font-title);
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.blue-text {
+  position: absolute;
+  color: #3057a2;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  top: 72px;
+  left: 301px;
+}
+
+/* Grid cards */
+
+.history-steps__cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 394px);
+  grid-template-rows: repeat(2, 112px) 136px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.history__slider {
+  display: none;
+}
+
+.history-steps__card {
+  display: flex;
+  background-image: url("../img/main/bg-card1.png");
+  padding: 20px;
+}
+
+.circule {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border-radius: 60px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 13px;
+}
+
+.card-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.card-wrapper--text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.xl-card {
+  width: 446px;
+}
+
+.grid-1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.grid-2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.grid-3 {
+  grid-area: 1 / 3 / 3 / 4;
+}
+.grid-4 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.grid-5 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.grid-6 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.grid-7 {
+  grid-area: 3 / 2 / 4 / 4;
+}
+
+.airplane-img {
+  position: absolute;
+  left: 875px;
+  bottom: 0px;
+}
+
+.airplane-img-mb {
+  display: none;
+}
+
+.carousel-steps {
+  display: none;
+}
+
+/* Card gamers */
+
+.participant {
+  margin-bottom: 140px;
+}
+.participant__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.participant__title h3 {
+  font-family: var(--font-title);
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.participant__carousel-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.participant__carousel-btn--mob {
+  display: none;
+}
+
+.participant__carousel-btn span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Card */
+
+.participant__slider {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  width: 394px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-out;
+}
+
+.card__photo {
+  margin-bottom: 28px;
+}
+
+.card__desc {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card__desc h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card__desc p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.card__btn {
+  display: inline-flex;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #3057a2;
+  border-radius: 62px;
+  border: 1px solid #3057a2;
+  transition: all 0.3s ease-out;
+}
+
+.card__btn:hover {
+  color: #fff;
+  border: 1px solid #3057a2;
+  background: #3057a2;
+}
+
+.footer {
+  background-color: #e9ded4;
+  height: 150px;
+}
+
+.footer__text {
+  padding-top: 40px;
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.btn-circle {
+  transition: all 0.2s ease-out;
+}
+
+.btn-circle:hover {
+  fill: #fbce51;
+}
+
+.muted-num {
+  opacity: 0.6;
+}
+
+/* Media */
+
+@media (max-width: 992px) {
+  .header {
+    padding-top: 18px;
+  }
+  .logo {
+    margin-bottom: 40px;
+  }
+  .header__content {
+    width: 335px;
+  }
+  .header__title {
+    font-size: 36px;
+  }
+  .header__text-cta {
+    margin-bottom: 32px;
+    text-align: left;
+    font-size: 18px;
+  }
+  .header__group-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .header__btn {
+    height: 47px;
+    font-size: 16px;
+
+    display: flex;
+    padding: 18px 20px;
+    flex-direction: row;
+  }
+  /* Бегущая строка */
+  .marquee {
+    height: 38px;
+  }
+  .marquee p {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  /* Chess */
+  .chess-contest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+
+  .chess-contest__content--mob {
+    width: 335px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .chess-contest__content--mob h2,
+  .chess-text__mob {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .chess-contest__content {
+    display: none;
+  }
+
+  /* Chess games */
+
+  .chess-games {
+    margin-bottom: 120px;
+  }
+  .chess-games__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .chess-games-img {
+    width: 420px;
+    height: 374px;
+  }
+
+  .chess-games__table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chess-games__table h2 {
+    width: 335px;
+    margin-bottom: 44px;
+    font-size: 28px;
+  }
+  .table-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 48px;
+  }
+  .table-row {
+    display: flex;
+    padding: 12px 0;
+  }
+  .table-row:nth-child(even) {
+    padding-left: 0;
+  }
+
+  .table-row:not(:nth-child(even)) {
+    border-right: none;
+  }
+  .table-row:not(:nth-child(even)) {
+    border-bottom: none;
+  }
+  .table-row:not(:nth-last-child(-n + 2)) {
+    border-bottom: 2px solid #d0d0d0;
+  }
+  a.chess-games__link {
+    color: #3057a2;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .history-steps {
+    margin-bottom: 120px;
+  }
+  .history-steps__title {
+    position: relative;
+    width: 335px;
+    margin-bottom: 170px;
+  }
+  .history-steps__title h3 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  .blue-text {
+    position: absolute;
+    font-size: 18px;
+    top: 120px;
+    left: 0px;
+  }
+
+  .history-steps__cards {
+    display: none;
+  }
+
+  .carousel-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+  }
+
+  .airplane-img {
+    display: none;
+  }
+
+  .airplane-img-mb {
+    z-index: 99999;
+    position: absolute;
+    left: 0px;
+    bottom: -236px;
+  }
+
+  .history__slider {
+    max-width: 335px;
+    display: flex;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+  }
+
+  .slider-one {
+    display: flex;
+    gap: 20px;
+  }
+
+  .slider__card {
+    padding-left: 20px;
+    padding-top: 62px;
+    width: 335px;
+    height: 300px;
+    background-image: url("../img/main/bg-card1.png");
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .double-card {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .double-card__wrapper {
+    display: flex;
+    gap: 16px;
+  }
+
+  .slider__card-desc {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .carousel-steps {
+    display: flex;
+    gap: 40px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    margin: 0 5px;
+  }
+
+  .indicator.active {
+    background-color: #313131; /* Цвет для активного индикатора */
+  }
+
+  /* Participiant */
+
+  .participant {
+    margin-bottom: 100px;
+  }
+  .participant__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .participant__title h3 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .participant__carousel-btn {
+    display: none;
+  }
+
+  .participant__carousel-btn--mob {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .slider {
+    display: flex;
+    gap: 20px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  /* Footer */
+  .footer {
+    height: 214px;
+  }
+  .footer__text {
+    text-align: left;
+  }
+}
