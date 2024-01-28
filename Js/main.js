@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
   const totalSlides = cards.length;
   const sliderCounter = document.getElementById("sliderCounter");
-  const visibleSlides = 4;
+  const visibleSlides = 5;
   const slideWidth = cards[0].offsetWidth + 20;
   let currentIndex = 0;
 
