@@ -515,8 +515,8 @@ a.chess-games__link {
 @media (max-width: 992px) {
   .header {
     display: flex;
-    padding-top: 18px;
     flex-direction: column;
+    padding-top: 18px;
   }
   .logo {
     margin-bottom: 40px;
@@ -675,6 +675,7 @@ a.chess-games__link {
   }
 
   .airplane-img-mb {
+    display: block;
     z-index: 99999;
     position: absolute;
     left: 0px;
