@@ -550,6 +550,7 @@ a.chess-games__link {
     height: 38px;
   }
   .marquee p {
+    text-wrap: nowrap;
     padding: 10px 0;
     font-size: 16px;
   }
@@ -725,7 +726,7 @@ a.chess-games__link {
 
   .carousel-steps {
     display: flex;
-    gap: 40px;
+    gap: 16px;
   }
 
   .indicator {
@@ -734,6 +735,11 @@ a.chess-games__link {
     border-radius: 50%;
     background-color: #d9d9d9;
     margin: 0 5px;
+  }
+
+  .indicator__wrapper {
+    display: flex;
+    align-items: center;
   }
 
   .indicator.active {
