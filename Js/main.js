@@ -57,12 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
     sliderCounter[1].textContent = `${displayedIndex}/${totalSlides}`;
   }
 
-  document
-    .querySelector(".participant__next-btn")
-    .addEventListener("click", nextSlide);
-  document
-    .querySelector(".participant__prev-btn")
-    .addEventListener("click", prevSlide);
+  const btnSlideNext = document.querySelectorAll(".participant__next-btn");
+  const btnSlidePrev = document.querySelectorAll(".participant__prev-btn");
+  console.log(btnSlidePrev)
+
+    btnSlideNext[0].addEventListener("click", nextSlide);
+    btnSlideNext[1].addEventListener("click", nextSlide);
+    btnSlidePrev[0].addEventListener("click", prevSlide);
+    btnSlidePrev[1].addEventListener("click", prevSlide);
 
   setInterval(nextSlide, 4000);
 
