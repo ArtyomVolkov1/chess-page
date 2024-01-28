@@ -514,7 +514,9 @@ a.chess-games__link {
 
 @media (max-width: 992px) {
   .header {
+    display: flex;
     padding-top: 18px;
+    flex-direction: column;
   }
   .logo {
     margin-bottom: 40px;
@@ -637,6 +639,9 @@ a.chess-games__link {
   }
 
   .history-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 120px;
   }
   .history-steps__title {
@@ -737,6 +742,9 @@ a.chess-games__link {
   /* Participiant */
 
   .participant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 100px;
   }
   .participant__title {
