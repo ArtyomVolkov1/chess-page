@@ -59,14 +59,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const btnSlideNext = document.querySelectorAll(".participant__next-btn");
   const btnSlidePrev = document.querySelectorAll(".participant__prev-btn");
-  console.log(btnSlidePrev)
-
-    btnSlideNext[0].addEventListener("click", nextSlide);
-    btnSlideNext[1].addEventListener("click", nextSlide);
-    btnSlidePrev[0].addEventListener("click", prevSlide);
-    btnSlidePrev[1].addEventListener("click", prevSlide);
-
+  btnSlideNext.forEach((slide) => {
+    return slide.addEventListener("click", nextSlide);
+  });
+  btnSlidePrev.forEach((slide) => {
+    return slide.addEventListener("click", prevSlide)
+  })
   setInterval(nextSlide, 4000);
+  
+// Slider history-card
 
   const slider2 = document.querySelector(".slider-one");
   const cards2 = document.querySelectorAll(".slider-one .slider__card");
@@ -120,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       document.querySelector(".btn-left-circule").classList.remove("inactive");
     }
-  
+
     if (currentIndex2 === totalSlides2 - 1) {
       document.querySelector(".btn-right-circule").classList.add("inactive");
     } else {
