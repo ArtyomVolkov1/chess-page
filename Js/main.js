@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateSlider2() {
     slider2.style.transform = `translateX(${-currentIndex2 * slideWidth2}px)`;
     updateIndicators();
+    updateButtons();
   }
   function nextSlide2() {
     currentIndex2++;
@@ -94,7 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       currentIndex2 = totalSlides2 - 1;
       updateSlider2();
+      document.querySelector(".steps-btn-right").classList.add("inactive");
     }
+    document.querySelector(".steps-btn-left").classList.remove("inactive");
   }
 
   function prevSlide2() {
@@ -104,6 +107,22 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       currentIndex2 = 0;
       updateSlider2();
+      document.querySelector(".btn-left-circule").classList.add("inactive");
+    }
+    document.querySelector(".btn-right-circule").classList.remove("inactive");
+  }
+
+  function updateButtons() {
+    if (currentIndex2 === 0) {
+      document.querySelector(".btn-left-circule").classList.add("inactive");
+    } else {
+      document.querySelector(".btn-left-circule").classList.remove("inactive");
+    }
+  
+    if (currentIndex2 === totalSlides2 - 1) {
+      document.querySelector(".btn-right-circule").classList.add("inactive");
+    } else {
+      document.querySelector(".btn-right-circule").classList.remove("inactive");
     }
   }
 
@@ -114,5 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelector(".steps-btn-left")
     .addEventListener("click", prevSlide2);
 
-    updateIndicators();
+  updateIndicators();
+  updateButtons();
 });
