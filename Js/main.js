@@ -7,13 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let slideWidth = Math.round(cards[0].getBoundingClientRect().width) + 20;
   let currentIndex = 0;
   
-  const clonedCards = Array.from(cards).map((card) => {
-    const clone = card.cloneNode(true);
-    clone.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-    slider.appendChild(clone);
-    return clone;
-  });
-  
   slider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
   
   function updateSlider() {
@@ -24,26 +17,20 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function nextSlide() {
     currentIndex++;
-    if (currentIndex >= totalSlides + visibleSlides) {
-      currentIndex = totalSlides;
-      slider.addEventListener("transitionend", transitionEndHandler);
+    if (currentIndex >= totalSlides) {
+      currentIndex = 0;
       slider.style.transition = "none";
-      updateSlider();
-    } else {
-      updateSlider();
     }
+    updateSlider();
   }
   
   function prevSlide() {
     currentIndex--;
     if (currentIndex < 0) {
       currentIndex = totalSlides - 1;
-      slider.addEventListener("transitionend", transitionEndHandler);
       slider.style.transition = "none";
-      updateSlider();
-    } else {
-      updateSlider();
     }
+    updateSlider();
   }
   
   function transitionEndHandler() {
