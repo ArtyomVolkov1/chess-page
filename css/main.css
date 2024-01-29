@@ -762,9 +762,14 @@ a.chess-games__link {
   .participant {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     margin-bottom: 100px;
   }
+
+  .participant__slider {
+    max-width: 369px;
+  }
+
   .participant__title {
     display: flex;
     justify-content: space-between;
